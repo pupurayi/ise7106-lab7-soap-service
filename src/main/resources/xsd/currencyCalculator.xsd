@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.hit.ac.zw/ise7106/lab7"
+           targetNamespace="http://www.hit.ac.zw/ise7106/lab7" elementFormDefault="qualified">
+
+    <xs:element name="convertRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="from" type="tns:currency"/>
+                <xs:element name="to" type="tns:currency"/>
+                <xs:element name="amount" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="convertResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="summary" type="xs:string"/>
+                <xs:element name="oneTo" type="xs:decimal"/>
+                <xs:element name="convertedAmount" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ZWG"/>
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
