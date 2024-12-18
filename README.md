@@ -5,10 +5,11 @@
 [http://localhost:8080/ws/currencyCalculator.wsdl](http://localhost:8080/ws/currencyCalculator.wsdl)
 
 ## EXAMPLE
-
 ```curl
 curl --location 'http://localhost:8080/ws' \
 --header 'content-type: text/xml' \
+--header 'Authorization: Basic YWRtaW46YWRtaW4=' \
+--header 'Cookie: JSESSIONID=3A8323158FB84FFE819ED60DCB97A738' \
 --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                   xmlns:gs="http://www.hit.ac.zw/ise7106/lab7">
     <soapenv:Header/>
