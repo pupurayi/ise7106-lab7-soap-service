@@ -1,4 +1,4 @@
-FROM maven:3.8.4-openjdk-11 AS MAVEN_BUILD
+FROM maven:3.8.4-openjdk-17 AS MAVEN_BUILD
 
 MAINTAINER sentrypay.co.zw
 
@@ -8,7 +8,7 @@ COPY src /build/src/
 WORKDIR /build/
 RUN --mount=type=cache,target=/root/.m2 mvn package
 
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:17-jre-hotspot
 
 RUN adduser --system --group sentrypay
 USER sentrypay:sentrypay
