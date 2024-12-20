@@ -8,7 +8,7 @@ COPY src /build/src/
 WORKDIR /build/
 RUN --mount=type=cache,target=/root/.m2 mvn package
 
-FROM adoptopenjdk:17-jre
+FROM openjdk:17-jdk-slim
 
 RUN adduser --system --group sentrypay
 USER sentrypay:sentrypay
